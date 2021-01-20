@@ -1,4 +1,7 @@
 name: Add Rockset docs
+description: Upload documents to your Rockset collections on repository pushes.
+icon: arrow-up-circle
+color: purple
 on: push
 jobs:
   main:
