@@ -18,6 +18,5 @@ jobs:
           curl ${{ secrets.DOCS_RAW_URL }} > data.json
           echo "{\"data\": $(cat data.json)" > data.json
           printf "}" >> data.json
-          cat data.json
           rockset api:documents:addDocuments ${{ secrets.WORKSPACE }} ${{ secrets.COLLECTION }} --body data.json
           rm data.json
