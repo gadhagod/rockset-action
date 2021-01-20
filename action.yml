@@ -1,0 +1,20 @@
+name: Add Rockset docs
+on: push
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install dependencies
+        run: |
+          sudo npm install -g @rockset/cli
+      - name: Authorize access
+        run: |
+          rockset auth:add user ${{ secrets.ROCKSET_TOKEN }}
+      - name: Add docs
+        run: |
+          curl ${{ secrets.DOCS_RAW_URL }} > data.json
+          echo "{\"data\": $(cat data.json)" > data.json
+          printf "}" >> data.json
+          cat data.json
+          rockset api:documents:addDocuments ${{ secrets.WORKSPACE }} ${{ secrets.COLLECTION }} --body data.json
+          rm data.json
