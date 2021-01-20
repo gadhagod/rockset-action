@@ -1,6 +1,6 @@
 # Rockset GitHub Integration
 
-Upload documents to your Rockset's collection on certain pushes. \
+Upload documents to your Rockset collections on repository pushes. \
 [View on GitHub Marketplace](https://github.com/marketplace/rockset)
 
 ## Secrets
