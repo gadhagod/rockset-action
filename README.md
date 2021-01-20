@@ -1,6 +1,6 @@
 # Rockset GitHub Integration
 
-Upload documents to your Rockset collections on repository pushes. \
+Upload documents from a repo file or URL to your Rockset collections on repository pushes. When commits are made to a specific directory, the specific documents from the directory can be added to your collection automatically. \
 [View on GitHub Marketplace](https://github.com/marketplace/add-rockset-docs)
 
 ## Secrets
