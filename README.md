@@ -1,7 +1,7 @@
 # Rockset GitHub Integration
 
 Upload documents to your Rockset collections on repository pushes. \
-[View on GitHub Marketplace](https://github.com/marketplace/rockset)
+[View on GitHub Marketplace](https://github.com/marketplace/add-rockset-docs)
 
 ## Secrets
 You need to set three secrets for this workflow to run:
