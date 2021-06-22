@@ -6,9 +6,8 @@ Upload documents from a repo file or URL to your Rockset collections on reposito
 ## Secrets
 You need to set three secrets for this workflow to run:
 * `ROCKSET_TOKEN`: your API token retrieved from the Rockset console
+
+## Parameters
 * `DOCS_FILE`: the repository file with the documents to be added.
 * `WORKSPACE`: workspace of the collection.
 * `COLLECTION`: name of the collection.
-
-## Configuration
-You can have it run only on certain branches or paths by adding keys `branch` or `paths` to `push`.

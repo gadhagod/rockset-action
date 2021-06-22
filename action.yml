@@ -2,6 +2,21 @@ name: Add Rockset docs
 description: Upload documents to your Rockset collections on repository pushes.
 icon: arrow-up-circle
 color: purple
+
+inputs:
+  file:
+    required: true
+    description: Path of the file with the documents to be added
+
+  collection:
+    required: true
+    description: Name of the collection to be added to
+
+  workspace:
+    required: false
+    description: Workspace of collection
+    default: commons
+
 on: push
 jobs:
   main:
@@ -16,7 +31,6 @@ jobs:
           rockset auth:add user ${{ secrets.ROCKSET_TOKEN }}
       - name: Add docs
         run: |
-          cat ${{ secrets.DOCS_FILE }} > data.json
-          echo "{\"data\": $(cat data.json)" > data.json
-          printf "}" >> data.json
-          rockset api:documents:addDocuments ${{ secrets.WORKSPACE }} ${{ secrets.COLLECTION }} --body data.json
+          data=$(cat ${{ $INPUT_FILE }})
+          echo "{\"data\": $(data) }" > data.json
+          rockset api:documents:addDocuments ${{ $INPUT_WORKSPACE }} ${{ $INPUT_COLLECTION }} --body data.json
